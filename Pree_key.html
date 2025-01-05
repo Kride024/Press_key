@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<div>>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width:100vw;
+            height:100vh;
+            display:flex;
+            justify-content: center;
+            margin-top: 10rem;
+            background-color: #000;
+        }
+        .output{
+            margin-top:2rem;
+            padding:1.5rem;
+            background-color: #232222;
+            box-shadow: #fff 1px 1px 5px;
+        }
+        #myInput{
+            padding:0.5rem 1rem;
+            border-radius: 1rem;;
+        }
+        .keyPressed,
+        .keyCode,
+        .eventType,
+        .charCode{
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="myInput" placeholder="Type something..."/>
+        <div class="output">
+        <p class="keyPressed">Key pressed:</p>
+        <p class="keyCode">key code:</p>
+        <p class="charCode">Char codeAt:</p>
+        <p class="eventType">Event type:</p>
+        </div>
+    </div>
+   <script>
+    const handleKeyPress=(event)=>{
+        //display information about the keyboard event in the console
+        // console.log("key pressed:", event.key);
+        // console.log("key code:",event.code);
+        // console.log("Event type:",event.type);  
+
+document.querySelector(
+    ".keyPressed"
+).textContent=`Key pressed: ${event.key}`;
+
+document.querySelector(
+    ".keyCode"
+).textContent=`key code: ${event.code}`;
+ 
+document.querySelector(
+    ".charCode"
+).textContent=`charCode: ${event.key.charCodeAt(0)}`;
+
+document.querySelector(
+    ".eventType"
+).textContent=`Event type: ${event.type}`;
+// myInput.value="";
+    };
+
+    var myInput=document.getElementById("myInput");
+    myInput.addEventListener("keyup",handleKeyPress);
+   </script>  
+</body>
+</html>
